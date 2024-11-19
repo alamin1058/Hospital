@@ -1,0 +1,100 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Doctor {
+
+    private int doctorId;
+    private String name;
+    private String specialization;
+    private List<String> availableSlots;
+
+    public Doctor(int doctorId, String name, String specialization, String availableSlots) {
+        this.doctorId = doctorId;
+        this.name = name;
+        this.specialization = specialization;
+    }
+
+    public int getDoctorId() {
+        return doctorId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public List<String> getAvailableSlots() {
+        return availableSlots;
+    }
+
+    public void display() {
+        System.out.println("-------------------------\nDoctor:");
+        System.out.println("Doctor ID: " + doctorId + "\nName: " + name + "\nSpecialization: " + specialization);
+    }
+}
+
+class Patient {
+
+    private int patientId;
+    private String name;
+    private int age;
+    private String contactNumber;
+
+    public Patient(int patientId, String name, int age, String contactNumber) {
+        this.patientId = patientId;
+        this.name = name;
+        this.age = age;
+        this.contactNumber = contactNumber;
+    }
+
+    public int getPatientId() {
+        return patientId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public void display() {
+        System.out.println("-------------------------\nPatient:");
+        System.out.println("Patient ID: " + patientId + "\nName: " + name + "\nAge: " + age + "\nContact Number:" + contactNumber);
+    }
+}
+
+class Appointment {
+
+    private int appointmentId;
+    private Patient patient;
+    private Doctor doctor;
+    private String timeSlot;
+
+    public Appointment(int appointmentId, Patient patient, Doctor doctor, String timeSlot) {
+        this.appointmentId = appointmentId;
+        this.patient = patient;
+        this.doctor = doctor;
+        this.timeSlot = timeSlot;
+    }
+}
+
+public class Hospital {
+
+    public static void main(String[] args) {
+        Doctor d1 = new Doctor(123, "Dr.Korim khan", "Cardiologist", "10:00PM");
+        d1.display();
+
+        Patient p1 = new Patient(1, "Rohim", 23, "017123456789");
+        p1.display();
+
+    }
+}
